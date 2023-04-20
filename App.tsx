@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import { StatusBar } from "react-native";
 import {
   useFonts,
   Roboto_400Regular,
@@ -19,8 +20,14 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar 
+        barStyle="light-content"
+        translucent // serve para dizer que o aplicativo começa do top do dispositivo, acima dos icones de hora, wifi, % bateria, ou seja a aplicação fica esticada para cobrir toda a tela
+        
+        backgroundColor="transparent"
+      />
       {/* se a font carregou entao mostra o grups, se nao mostra o loading ate que carregue */}
-      { !fontsLoaded ? <Groups /> : <Loading/>}
+      { fontsLoaded ? <Groups /> : <Loading/>}
     </ThemeProvider>
   );
 }
