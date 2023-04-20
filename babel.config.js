@@ -13,7 +13,6 @@ module.exports = function (api) {
             "@routes": "./src/routes",
             "@screens": "./src/screens",
             "@storage": "./src/storage",
-            "@theme": "./src/theme",
             "@utils": "./src/utils",
           },
         },
@@ -21,3 +20,5 @@ module.exports = function (api) {
     ],
   };
 };
+
+// configuração para facilitar a importação de arquivos e pastas

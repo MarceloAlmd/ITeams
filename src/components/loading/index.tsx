@@ -1,8 +1,9 @@
 import * as Styles from "./styles";
 
-export function Groups() {
+export function Loading() {
   return (
     <Styles.Container>
+      <Styles.LoadIndicator />
     </Styles.Container>
   );
 }

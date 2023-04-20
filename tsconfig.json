@@ -4,12 +4,12 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
+      // configuração para que o TS deia sugestão ao fazer a importação de arquivos e pastas ao usar
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@routes/*": ["./src/routes/*"],
       "@screens/*": ["./src/screens/*"],
       "@storage/*": ["./src/storage/*"],
-      "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"]
     }
   }
