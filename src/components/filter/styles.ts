@@ -9,11 +9,8 @@ export const Container = styled(TouchableOpacity)<FilterStylesProps>`
   ${({ theme, isActive }) =>
     isActive &&
     css`
-      /* border: 1px solid ${theme.COLORS.GREEN_700}; */
+      border: 1px solid ${theme.COLORS.GREEN_700};
     `};
-
-  border: 1px solid ${({ theme, isActive }) =>
-    isActive ? theme.COLORS.GREEN_700 : theme.COLORS.RED};
 
   border-radius: 4px;
   margin-right: 12px;

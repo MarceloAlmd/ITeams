@@ -22,3 +22,4 @@ export const BackIcon = styled(CaretLeft).attrs(({ theme }) => ({
   size: 32,
   color: theme.COLORS.WHITE,
 }))``;
+
