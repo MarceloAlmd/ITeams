@@ -10,6 +10,7 @@ import { Loading } from "@components/loading";
 import theme from "./src/theme";
 import { Groups } from "@screens/groups";
 import { NewGroup } from "@screens/newGroup";
+import { Players } from "@screens/players";
 
 export default function App() {
   // o carregamento de font é assíncrono, por isso, precisamos garantir que as fontes carregue primeiro e so entao a aplicação apareça, por isso fazemos essa estrategia
@@ -27,7 +28,7 @@ export default function App() {
         backgroundColor="transparent"
       />
       {/* se a font carregou entao mostra o grups, se nao mostra o loading ate que carregue */}
-      {fontsLoaded ? <Groups /> : <Loading />}
+      {fontsLoaded ? <Players /> : <Loading />}
     </ThemeProvider>
   );
 }
