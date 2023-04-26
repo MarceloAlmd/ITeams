@@ -6,9 +6,14 @@ import { useState } from "react";
 import { FlatList } from "react-native";
 import { ListEmpty } from "@components/listEmpty";
 import { Button } from "@components/button";
+import {useNavigation} from '@react-navigation/native'
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
+  const navigation = useNavigation();
+  function handleNewGroup() {
+    navigation.navigate('new')
+  }
 
   return (
     <Styles.Container>
@@ -18,22 +23,16 @@ export function Groups() {
       <FlatList
         data={groups}
         keyExtractor={(item) => item}
-        renderItem={({ item }) => (
-          <GroupCard 
-            title={item} 
-          />
-        )}
+        renderItem={({ item }) => <GroupCard title={item} />}
         // centralizando os styles da lista vazia
-        contentContainerStyle={groups.length === 0 && {flex: 1}}
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
         ListEmptyComponent={() => (
-          <ListEmpty message="Que tal cadastrar a primeira Turma?"/>
+          <ListEmpty message="Que tal cadastrar a primeira Turma?" />
         )}
         showsVerticalScrollIndicator={false}
       />
 
-      <Button 
-        title="Criar nova Turma"
-      />
+      <Button title="Criar nova Turma" onPress={handleNewGroup}/>
     </Styles.Container>
   );
 }
