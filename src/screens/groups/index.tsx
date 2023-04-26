@@ -6,13 +6,13 @@ import { useState } from "react";
 import { FlatList } from "react-native";
 import { ListEmpty } from "@components/listEmpty";
 import { Button } from "@components/button";
-import {useNavigation} from '@react-navigation/native'
+import { useNavigation } from "@react-navigation/native";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   function handleNewGroup() {
-    navigation.navigate('new')
+    navigation.navigate("new");
   }
 
   return (
@@ -32,7 +32,7 @@ export function Groups() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Button title="Criar nova Turma" onPress={handleNewGroup}/>
+      <Button title="Criar nova Turma" onPress={handleNewGroup} />
     </Styles.Container>
   );
 }

@@ -1,26 +1,34 @@
 import { useState } from "react";
+import { useRoute } from "@react-navigation/native";
+
 import * as Styles from "./styles";
+
+import { FlatList } from "react-native";
+
 import { Header } from "@components/header";
 import { HighLight } from "@components/highlight";
 import { ButtonIcon } from "@components/buttonIcon";
 import { Input } from "@components/input";
 import { Filter } from "@components/filter";
-import { FlatList } from "react-native";
 import { PlayerCard } from "@components/playerCard";
 import { ListEmpty } from "@components/listEmpty";
 import { Button } from "@components/button";
+
+type RouteParamsProps = {
+  group: string;
+};
 
 export function Players() {
   const [team, setTeam] = useState("");
   const [players, setPlayers] = useState([]);
 
+  const route = useRoute();
+  const { group } = route.params as RouteParamsProps;
+
   return (
     <Styles.Container>
       <Header showBackButton />
-      <HighLight
-        title="Nome da Turma"
-        subTitle="adicione a galera e separe os times"
-      />
+      <HighLight title={group} subTitle="adicione a galera e separe os times" />
       <Styles.Form>
         <Input
           placeholder="Nome da pessoa"
@@ -66,10 +74,7 @@ export function Players() {
         ]}
       />
 
-      <Button 
-        title="Remover Turma"
-        type="SECONDARY"
-      />
+      <Button title="Remover Turma" type="SECONDARY" />
     </Styles.Container>
   );
 }
