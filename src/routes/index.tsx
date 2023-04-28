@@ -11,4 +11,4 @@ export function Routes() {
       </NavigationContainer>
     </View>
   );
-}
+};
